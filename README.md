@@ -47,10 +47,11 @@ Note: This file was not used at the end because keyword extraction performed bet
 **Data Cleaning** 
 1. Filter comments from the year 2020 or later using the get_year function. 
 2. Apply a series of data cleaning operations, including: 
-  - Stripping - Removing rows with less than 5 characters 
-  - Handling empty lines (`empty_lines`) 
-  - Removing host information (`remove_host_names`, `remove_host`) 
-  - Retaining only English reviews (`english_only`) for improved topic modeling results
+    - Stripping
+    - Removing rows with less than 5 characters 
+    - Handling empty lines (`empty_lines`) 
+    - Removing host information (`remove_host_names`, `remove_host`) 
+    - Retaining only English reviews (`english_only`) for improved topic modeling results
 
 **LDA Topic Modeling** 
 1. Utilize two functions, `clean_text` and `lda`, to perform LDA topic modeling on listings with more than 100 reviews 
