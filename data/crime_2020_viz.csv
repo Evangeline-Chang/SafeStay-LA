@@ -1,15 +1,15 @@
 ,ZIP,Crime Type,Season,Crime_Count
 0,90012,Larceny,2020 Q1,1
 1,90012,Others,2020 Q1,1
-2,90013,Assault,2020 Q1,1
-3,90013,Larceny,2020 Q1,1
-4,90013,Others,2020 Q1,1
-5,90013,Sex-Related,2020 Q1,1
-6,90014,Robbery,2020 Q1,1
-7,90015,Burglary,2020 Q1,1
-8,90017,Larceny,2020 Q1,1
-9,90017,Public Safety,2020 Q1,1
-10,90037,Assault,2020 Q1,1
+2,90013,Others,2020 Q1,1
+3,90013,Sex-Related,2020 Q1,1
+4,90014,Robbery,2020 Q1,1
+5,90015,Burglary,2020 Q1,1
+6,90017,Larceny,2020 Q1,1
+7,90017,Public Safety,2020 Q1,1
+8,90037,Assault,2020 Q1,1
+9,90071,Assault,2020 Q1,1
+10,90071,Larceny,2020 Q1,1
 11,90710,Larceny,2020 Q1,1
 12,90851,Assault,2020 Q4,1
 13,91342,Assault,2020 Q4,1
