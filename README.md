@@ -6,7 +6,7 @@ The final result is in the link as below: <https://public.tableau.com/views/Safe
 
 In this repository, there are 8 notebooks, each containing a part of data cleaning and XXXX performed on the datasets to be used in the dashboard.
 
-### [01_zipcode.ipynb](01_zipcode.ipynb)
+### [01_zipcode](01_zipcode.ipynb)
 
 #### Convert the latitude and longitude data from crime data to zip codes.
 
@@ -14,7 +14,7 @@ The original dataset has nearly 800,000 rows, and after filtering for the year 2
 
 To test the code without running it for 27 hours, I extracted the top 20 rows from the original dataset and saved them as `Crime_Data_head20.csv` for testing and review.
 
-### 02_fillna
+### [02_fillna](02_fillna.ipynb)
 
 #### Automate the process of inputting zip code data for rows with missing latitude and longitude data
 
@@ -24,13 +24,13 @@ For code testing, I extracted a subset of rows from the original dataset and sav
 
 For the 65 rows that could not be filled using the code mentioned above, I manually inputted the values in Excel.
 
-### 03_crime_rate
+### [03_crime_rate](03_crime_rate.ipynb)
 
 #### Calculate crime rates by zip code
 
 By combining the crime count and the population of each zip code, I have defined a function `crime_rate` to calculate the crime rate within each zip code. Since I wasn't able to upload the whole csv file for crime data 2020, I have uploaded `crime_count.csv`, which is a file of crime counts in each zip code. The final resulting data frame is saved as `crime_rate_2020.csv`.
 
-### 04_airbnb_basics
+### [04_airbnb_basics](04_airbnb_basics.ipynb)
 
 #### Obtain basic information about each listing from the Airbnb file that I got from Inside Airbnb
 
@@ -38,7 +38,7 @@ There are two functions: `superhost` and `basic_info` in this file. The former c
 
 The original file contains approximately 45,000 rows. To ensure a smooth review process, I created a subset of the first 100 rows, named `detailed_listings_test.csv`, for reviewing.
 
-### 05_review_topics
+### [05_review_topics](05_review_topics.ipynb)
 
 #### Perform data cleaning on the reviews and conduct topic modeling on listings with more than 100 reviews
 
@@ -58,15 +58,15 @@ Note: This file was not used at the end because keyword extraction performed bet
 2. Retrieve the top five words for each topic
 3. Combine the results with the full listings dataframe, making it suitable for use in Tableau
 
-### 06_keyword extraction
+### [06_keyword_extraction](06_keyword_extraction.ipynb)
 #### Perform keyword extraction on listings with more than 15 reviews since 2020
 The first part involves data cleaning. The methods used were not exactly the same as the ones I applied in topic modeling. After data cleaning, I excluded a lot of stopwords, which are words that need to be removed if they are determined as keywords by the model. Then, I extracted the top seven keywords and incorporated them into the listings file. Pleasantly, the results from `yake` are better than the LDA model; `yake` can even generate phrases like 'great location' and 'wonderful host'.
 
-### 07_safety_related
+### [07_safety_related](07_safety_related.ipynb)
 #### Identify Safety-Related Reviews and Determine Unsafe Listings
 For this task, I created a list of safety-related keywords, which includes `['safe', 'security', 'danger', 'unsafe', 'safety', 'dangerous']`. For listings that didn't undergo keyword extraction, I checked if the reviews contained any of these keywords using `is_safety_related`. If they did, I extracted the three words before and after the keywords with `extract_context` to later determine whether the listings were unsafe or not. In the end, I merged everything back into the listing file, and hopefully, this will be sufficient for me to work on the dashboard.
 
-### 08_crime_bar
+### [08_crime_bar](08_crime_bar.ipynb)
 #### Categorize the crime types and grouped them by quarters and ZIP codes
 In this file, I categorized the crimes into 6 groups, Theft, Assault, Burglary, Vandalism, Sex-Related, and Others. Then, I grouped them by quarters, ZIP codes, and crime types. The output file is used to create a bar chart showing the number of crimes in each area through 2020 Q1 to 2023 Q3.
 
