@@ -60,3 +60,8 @@ For this task, I created a list of safety-related keywords, which includes `['sa
 In this file, I categorized the crimes into 6 groups, Theft, Assault, Burglary, Vandalism, Sex-Related, and Others. Then, I grouped them by quarters, ZIP codes, and crime types. The output file is used to create a bar chart showing the number of crimes in each area through 2020 Q1 to 2023 Q3.
 
 In the end, the files should be sufficient for creating the dashboard.
+
+#### Data Sources
+- [Inside Airbnb](http://insideairbnb.com/get-the-data/): Airbnb Listings & Reviews (Sep 3, 2023) 
+- [DataLA](https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8): Crime data in Los Angeles (Nov 8, 2023) 
+- [US Census Bureau](https://data.census.gov/table/DECENNIALDHC2020.P1?g=040XX00US06$8600000&y=2020): Population by ZIP Codes (2020) 
