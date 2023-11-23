@@ -5,17 +5,17 @@ This repository is used to create an interactive Tableau-based dashboard, enabli
 The final result is available at the following link:
 **[SafeStay LA: Airbnb Safety Dashboard](https://public.tableau.com/views/SafeStayLAAirbnbSafetyDashboard/SafeStayLA?:language=en-US&:display_count=n&:origin=viz_share_link)**
 
-In this repository, there are 8 notebooks, each containing a part of data cleaning and XXXX performed on the datasets to be used in the dashboard.
+In this repository, there are 8 notebooks, each containing a segment of data cleaning and preprocessing tasks performed on the datasets to be used in the dashboard.
 
-### [01_zipcode](01_zipcode.ipynb)
-#### Convert the latitude and longitude data from crime data to zip codes.
+#### [01_zipcode](01_zipcode.ipynb)
+*Convert the latitude and longitude data from crime data to zip codes*
 
 The original dataset has nearly 800,000 rows, and after filtering for the year 2020 (using the function get_year), there are approximately 199,000 rows. I then split the dataset into 10 parts (and saved each of them just in case). After the 10 splits, I converted the latitude and longitude to zip codes using the function `latlong_zip` and saved the results respectively. Finally, I concatenated them back together.
 
 To test the code without running it for 27 hours, I extracted the top 20 rows from the original dataset and saved them as `Crime_Data_head20.csv` for testing and review.
 
-### [02_fillna](02_fillna.ipynb)
-#### Automate the process of inputting zip code data for rows with missing latitude and longitude data
+####  [02_fillna](02_fillna.ipynb)
+*Automate the process of inputting zip code data for rows with missing latitude and longitude data*
 
 I have created the `fill_same` function to iterate through the rows and identify those without zip code values, while checking if they share the same location and cross street as others. After running `fill_same` several times, approximately 550 rows have been filled out, leaving only 65 rows for manual input.
 
