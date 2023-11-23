@@ -40,15 +40,13 @@ The original file contains approximately 45,000 rows. To ensure a smooth review 
 
 Note: This file was not used at the end because keyword extraction performed better on the reviews and do not require as many reviews to generate meaningful result.
 
-##### Data Cleaning
-First, filter comments from the year 2020 or later using the `get_year` function. Then, apply a series of data cleaning operations, including stripping, removing rows with less than 5 characters, handling empty lines (`empty_lines`), removing host information (`remove_host_names`, `remove_host`), and retaining only English reviews (`english_only`) for improved topic modeling results.
+For data cleaning, I started by filtering comments from the year 2020 or later using the `get_year` function. Then, apply a series of data cleaning operations, including stripping, removing rows with less than 5 characters, handling empty lines (`empty_lines`), removing host information (`remove_host_names`, `remove_host`), and retaining only English reviews (`english_only`) for improved topic modeling results.
 
-##### LDA Topic Modeling
-In this part, I utilized two functions, `clean_text` and `lda`, to perform LDA topic modeling on listings with more than 100 reviews. After getting the results of LDA topic modeling, I retrieved the top five words for each topic and then combine the results with the full listings dataframe, making it suitable for use in Tableau.
+In the LDA Topic Modeling part, I utilized two functions, `clean_text` and `lda`, to perform LDA topic modeling on listings with more than 100 reviews. After getting the results of LDA topic modeling, I retrieved the top five words for each topic and then combine the results with the full listings dataframe, making it suitable for use in Tableau.
 
 ### [06_keyword_extraction](06_keyword_extraction.ipynb)
 #### Perform keyword extraction on listings with more than 15 reviews since 2020
-The first part involves data cleaning. The methods used were not exactly the same as the ones I applied in topic modeling. After data cleaning, I excluded a lot of stopwords, which are words that need to be removed if they are determined as keywords by the model. Then, I extracted the top seven keywords and incorporated them into the listings file. Pleasantly, the results from `yake` are better than the LDA model; `yake` can even generate phrases like 'great location' and 'wonderful host'.
+The first part involves data cleaning. The methods used were not exactly the same as the ones I applied in topic modeling, but it's similar. After data cleaning, I excluded a lot of stopwords, which are words that need to be removed if they are determined as keywords by the model. Then, I extracted the top seven keywords and incorporated them into the listings file. Pleasantly, the results from `yake` are better than the LDA model; `yake` can even generate phrases like 'great location' and 'wonderful host'.
 
 ### [07_safety_related](07_safety_related.ipynb)
 #### Identify safety-related reviews and determine unsafe listings
