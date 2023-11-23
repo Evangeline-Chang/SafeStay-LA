@@ -1,6 +1,6 @@
 # SafeStay LA: Airbnb Safety Dashboard
 
-This repository is used to create an interactive Tableau-based dashboard, enabling users to effortlessly search for secure Airbnb's by incorporating safety filters on an intuitive map interface.
+The files in this repository were used to create an interactive Tableau-based dashboard, enabling users to effortlessly search for secure Airbnb's by incorporating safety filters on an intuitive map interface.
 
 The final result is available at the following link:
 **[SafeStay LA: Airbnb Safety Dashboard](https://public.tableau.com/views/SafeStayLAAirbnbSafetyDashboard/SafeStayLA?:language=en-US&:display_count=n&:origin=viz_share_link)**
