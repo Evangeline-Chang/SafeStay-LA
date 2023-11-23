@@ -6,7 +6,8 @@ The final result is in the link as below: <https://public.tableau.com/views/Safe
 
 In this repository, there are 8 notebooks, each containing a part of data cleaning and XXXX performed on the datasets to be used in the dashboard.
 
-### 01_zipcode [a relative link](SafeStay-LA (Github)/01_zipcode.ipynb)
+### 01_zipcode
+[Contribution guidelines for this project](01_zipcode.ipynb)
 
 #### Convert the latitude and longitude data from crime data to zip codes.
 
