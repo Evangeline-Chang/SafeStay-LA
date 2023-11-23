@@ -3,7 +3,7 @@
 This repository is used to create an interactive Tableau-based dashboard, enabling users to effortlessly search for secure Airbnb's by incorporating safety filters on an intuitive map interface.
 
 The final result is available at the following link:
-[SafeStay LA: Airbnb Safety Dashboard](https://public.tableau.com/views/SafeStayLAAirbnbSafetyDashboard/SafeStayLA?:language=en-US&:display_count=n&:origin=viz_share_link)
+**[SafeStay LA: Airbnb Safety Dashboard](https://public.tableau.com/views/SafeStayLAAirbnbSafetyDashboard/SafeStayLA?:language=en-US&:display_count=n&:origin=viz_share_link)**
 
 In this repository, there are 8 notebooks, each containing a part of data cleaning and XXXX performed on the datasets to be used in the dashboard.
 
@@ -21,7 +21,7 @@ I have created the `fill_same` function to iterate through the rows and identify
 
 For code testing, I extracted a subset of rows from the original dataset and saved them as `crime_data_2020_zip_na.csv` for further review.
 
-For the 65 rows that could not be filled using the code mentioned above, I manually inputted the values in Excel.
+For the rows that could not be filled using the code mentioned above, I manually inputted the values in Excel.
 
 ### [03_crime_rate](03_crime_rate.ipynb)
 #### Calculate crime rates by zip code
@@ -40,21 +40,24 @@ The original file contains approximately 45,000 rows. To ensure a smooth review 
 
 Note: This file was not used at the end because keyword extraction performed better on the reviews and do not require as many reviews to generate meaningful result.
 
-For data cleaning, I started by filtering comments from the year 2020 or later using the `get_year` function. Then, apply a series of data cleaning operations, including stripping, removing rows with less than 5 characters, handling empty lines (`empty_lines`), removing host information (`remove_host_names`, `remove_host`), and retaining only English reviews (`english_only`) for improved topic modeling results.
+For data cleaning, I started by filtering comments from the year 2020 or later using the `get_year` function. Then, I applied a series of data cleaning operations, including stripping, removing rows with less than 5 characters, handling empty lines (`empty_lines`), removing host information (`remove_host_names`, `remove_host`), and retaining only English reviews (`english_only`) for improved topic modeling results.
 
 In the LDA Topic Modeling part, I utilized two functions, `clean_text` and `lda`, to perform LDA topic modeling on listings with more than 100 reviews. After getting the results of LDA topic modeling, I retrieved the top five words for each topic and then combine the results with the full listings dataframe, making it suitable for use in Tableau.
 
 ### [06_keyword_extraction](06_keyword_extraction.ipynb)
 #### Perform keyword extraction on listings with more than 15 reviews since 2020
+
 The first part involves data cleaning. The methods used were not exactly the same as the ones I applied in topic modeling, but it's similar. After data cleaning, I excluded a lot of stopwords, which are words that need to be removed if they are determined as keywords by the model. Then, I extracted the top seven keywords and incorporated them into the listings file. Pleasantly, the results from `yake` are better than the LDA model; `yake` can even generate phrases like 'great location' and 'wonderful host'.
 
 ### [07_safety_related](07_safety_related.ipynb)
 #### Identify safety-related reviews and determine unsafe listings
+
 For this task, I created a list of safety-related keywords, which includes `['safe', 'security', 'danger', 'unsafe', 'safety', 'dangerous']`. For listings that didn't undergo keyword extraction, I checked if the reviews contained any of these keywords using `is_safety_related`. If they did, I extracted the three words before and after the keywords with `extract_context` to later determine whether the listings were unsafe or not. In the end, I merged everything back into the listing file, and hopefully, this will be sufficient for me to work on the dashboard.
 
 ### [08_crime_bar](08_crime_bar.ipynb)
 #### Categorize the crime types and grouped them by quarters and ZIP codes
+
 In this file, I categorized the crimes into 6 groups, Theft, Assault, Burglary, Vandalism, Sex-Related, and Others. Then, I grouped them by quarters, ZIP codes, and crime types. The output file is used to create a bar chart showing the number of crimes in each area through 2020 Q1 to 2023 Q3.
 
 
-In the end, everything is merged back into the listing file, which should be sufficient for creating the dashboard.
+In the end, the files should be sufficient for creating the dashboard.
